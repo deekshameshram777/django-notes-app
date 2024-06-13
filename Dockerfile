@@ -6,7 +6,7 @@ COPY requirements.txt /app/backend
 RUN pip install -r requirements.txt
 COPY . /app/backend
 FROM python:3.9-slim
-
+WORKDIR /app/backend
 COPY --from=bulider /app/backend /app/backend
 
 EXPOSE 8000
